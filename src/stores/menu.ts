@@ -1,6 +1,6 @@
-import type { SideMenu } from '#/public';
-import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
+import type { SideMenu } from "#/public";
+import { create } from "zustand";
+import { devtools } from "zustand/middleware";
 
 interface MenuState {
   isPhone: boolean;
@@ -20,8 +20,8 @@ export const useMenuStore = create<MenuState>()(
     (set) => ({
       isPhone: false,
       isCollapsed: false,
-      selectedKeys: 'dashboard', // 菜单选中值
-      openKeys: ['Dashboard'], // 菜单展开项
+      selectedKeys: "dashboard", // 菜单选中值
+      openKeys: ["Dashboard"], // 菜单展开项
       menuList: [], // 菜单列表数据
       toggleCollapsed: (isCollapsed: boolean) => set({ isCollapsed }),
       togglePhone: (isPhone: boolean) => set({ isPhone }),
@@ -30,8 +30,8 @@ export const useMenuStore = create<MenuState>()(
       setMenuList: (menuList: SideMenu[]) => set({ menuList }),
     }),
     {
-      enabled: process.env.NODE_ENV === 'development',
-      name: 'menuStore'
+      enabled: process.env.NODE_ENV === "development",
+      name: "menuStore",
     }
   )
 );
